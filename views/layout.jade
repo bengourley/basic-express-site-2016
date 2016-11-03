@@ -1,0 +1,19 @@
+doctype html
+html
+  head
+    //where to get more css formatting
+    link(rel='stylesheet', href='/stylesheets/layout.css') 
+    //can rename title to something else later
+    title #{title} - Spots
+  body
+    .header
+      h1.page-title Spots
+
+    //links on a menu bar!
+    ul.nav
+      li: a(href='/') Home
+      li: a(href='/AdventureAnalytics') Adventure Analytics
+      li: a(href='/TravelLog') Travel Log
+
+    .main-content
+      block content
