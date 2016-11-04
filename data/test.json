@@ -1,0 +1,19 @@
+{
+  "markers": [
+    {
+      "name": "Finsburry",
+      "lat": 51.52617,
+      "lng": -0.10866 
+    },
+    {
+      "name": "Shoreditch",
+      "lat": 51.52639,
+      "lng": -0.08017
+    },
+    {
+      "name": "Whitechapel",
+      "lat": 51.51848,
+      "lng": -0.06317 
+    }
+  ]
+}
