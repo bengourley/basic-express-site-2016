@@ -1,0 +1,17 @@
+extend layout
+
+block content
+
+  p LOGGED ADVENTURE
+
+  form(action='/logAdventure',method='post')
+  Enter times visited
+  input(type='text')
+  br
+  Enter rating 0-10
+  input(type='text')
+  br
+  Enter hours spent
+  input(type='text')
+  br
+  a(href="/home") submit
