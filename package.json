@@ -5,8 +5,8 @@
   "private": "true",
   "main": "server.js",
   "scripts": {
-    "build-css": "stylus source/stylesheets/index.styl -o static/css",
-    "watch-css": "stylus source/stylesheets/index.styl -o static/css -w",
+    "build-css": "stylus public/stylesheets/layout.styl -o static/css",
+    "watch-css": "stylus public/stylesheets/layout.styl -o static/css -w",
     "clean": "rm -rf static/css && mkdir -p static/css",
     "build": "npm run clean && npm run build-css",
     "watch": "npm run clean && npm run watch-css & nodemon server -e js,jade",
@@ -15,10 +15,11 @@
   "author": "Ben Gourley",
   "license": "ISC",
   "dependencies": {
-    "express": "^4.13.4",
+    "express": "^4.14.0",
     "jade": "^1.11.0",
     "morgan": "^1.7.0",
-    "nodemon": "^1.9.1",
-    "stylus": "^0.53.0"
+    "nodemon": "^1.9.2",
+    "stylus": "^0.54.5",
+    "nib": "^1.1.2"
   }
 }
