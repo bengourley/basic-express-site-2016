@@ -1,0 +1,15 @@
+extend layout
+block content
+
+    //paragraph for title
+    p #{title}
+
+    //go through all of the adventures from the json file that we read
+    each adventure in adventures
+      a(href="adventure/" + adventure.name	class="adventure")
+        div(class = "image"	id= adventure.id)
+          img(src="images/" + adventure.image,
+          style="width:600px; height: 200px;",
+          alt="")
+          h2
+            span #{adventure.name}
