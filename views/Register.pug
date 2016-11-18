@@ -1,0 +1,47 @@
+-//Google analytics stuff
+
+
+html
+  head
+    //where to get more css formatting
+    link(rel='stylesheet', href='/stylesheets/layout.css')
+    link(rel='stylesheet', href='//netdna.bootstrapcdn.com/bootstrap/3.0.2/css/bootstrap.min.css')
+    link(rel='stylesheet', href='stylesheets/style.css')
+    //can rename title to something else later
+    title #{title} - Spots
+
+    body
+    .header
+      h1.page-title Spots
+
+block content
+
+  .main.container
+    .row
+      .col-md-6.col-md-offset-3
+        h1.display-2.m-b-2(style="text-align:center") Create a Spots acccount!
+        form(name="add-estimation", method="post")
+            div.input
+                label.reg Username
+                input(label="WOW", type="text", name="username", class='form-control')
+            div.input
+                label.reg Password
+                input(type="password",name="password", class='form-control').logintext
+            div.input
+                label.reg Confirm password
+                input(type="password",name="confirmpassword", class='form-control').logintext
+            div(style="text-align:center; position:relative; top:10px")
+              div.action
+                input(type="submit", value="Create Account").submitbtn
+              div(style="margin-top:3px; position:relative;left:-8px;") Already have an account?
+                  <a href="/Login" style="margin-left:4px;">Log in here</a>
+
+    //Google analytics stuff
+    script.
+      (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+      (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+      m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+      })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+      ga('create', 'UA-87345316-1', 'auto');
+      ga('send', 'pageview');
+      ga('send','event','button','register');

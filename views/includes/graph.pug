@@ -1,0 +1,103 @@
+
+block tester
+
+           script(src="http://d3js.org/d3.v3.min.js")
+           script.
+               var margin = {top: 20, right: 20, bottom: 100, left: 40},
+                   width = 600 - margin.left - margin.right,
+                   height = 500 - margin.top - margin.bottom;
+
+
+               // set the ranges
+               var x = d3.scale.ordinal().rangeRoundBands([0, width], .05);
+
+               var y = d3.scale.linear().range([height, 0]);
+
+               // define the axis
+               var xAxis = d3.svg.axis()
+                   .scale(x)
+                   .orient("bottom")
+
+
+               var yAxis = d3.svg.axis()
+                   .scale(y)
+                   .orient("left")
+                   .ticks(10);
+
+
+               // add the SVG element
+               var svg = d3.select("body").append("svg")
+                   .attr("width", width + margin.left + margin.right)
+                   .attr("height", height + margin.top + margin.bottom)
+                 .append("g")
+                   .attr("transform",
+                         "translate(" + margin.left + "," + margin.top + ")");
+
+               console.log("0");
+               // load the data
+               var user = !{JSON.stringify(user.adventures)};
+               console.log("Part1");
+                   var data = user;
+                   var dates = [];
+                   var newData = [];
+                   var counter = 0;
+                   console.log("Part2");
+                   data.forEach(function(d) {
+                       if(d.Date_Visited){
+                       console.log(d.Date_Visited);
+                       if(!dates[d.Date_Visited]){
+                           console.log("ANEW");
+                           dates[d.Date_Visited] = d;
+                           dates[d.Date_Visited].Freq = 0;
+                       }
+                       dates[d.Date_Visited].Letter = d.Date_Visited;
+
+                       dates[d.Date_Visited].Freq = dates[d.Date_Visited].Freq+1;
+                       }
+                   });
+
+                   for(var d in dates) {
+                       console.log("POOP");
+                       newData[counter] = dates[d];
+                       counter++;
+                   }
+                 console.log(dates);
+
+                 // scale the range of the data
+                 x.domain(data.map(function(d) { return d.Letter; }));
+                 y.domain([0, d3.max(data, function(d) { return d.Freq; })]);
+
+                 // add axis
+                 svg.append("g")
+                     .attr("class", "x axis")
+                     .attr("transform", "translate(0," + height + ")")
+                     .call(xAxis)
+                   .selectAll("text")
+                     .style("text-anchor", "end")
+                     .attr("dx", "-.8em")
+                     .attr("dy", "-.55em")
+                     .attr("transform", "rotate(-90)" );
+
+                 svg.append("g")
+                     .attr("class", "y axis")
+                     .call(yAxis)
+                   .append("text")
+                     .attr("transform", "rotate(-90)")
+                     .attr("y", 5)
+                     .attr("dy", ".71em")
+                     .style("text-anchor", "end")
+                     .text("Frequency");
+
+
+
+                 console.log(newData);
+                 // Add bar chart
+                 svg.selectAll("bar")
+                     .data(newData)
+                   .enter().append("rect")
+                     .attr("class", "bar")
+                     .attr("x", function(d) { return x(d.Letter); })
+                     .attr("width", x.rangeBand())
+                     .attr("y", function(d) { return y(d.Freq); })
+                     .attr("height", function(d) { return height - y(d.Freq); });
+

@@ -1,0 +1,54 @@
+extend layout
+
+block prepend links
+      - var homeURL = '/Home/' + user.id;
+      - var adURL = '/AdventureAnalytics/' + user.id;
+      - var travelURL = '/TravelLog/' + user.id;
+
+block content
+  .main.container
+    .row
+      .col-md-6.col-md-offset-3
+        h1.display-2.m-b-2(style="text-align:center") Log your Adventure!
+        form#log-adventure(method="post", enctype="multipart/form-data")
+          div.input
+            label Name
+            input#Name(type='text' name="name" value=values.name class="form-control")
+
+          div.input
+            label First Visit
+            input#TimesVisited(type='date' class="form-control" value=values.Date_Visited name="Date_Visited")
+
+          div.input
+            label Times Visited
+            input#TimesVisited(type='number' name="Times_Visited" value=values.Times_Visited class="form-control")
+
+          div.input
+            label Rating (1-10)
+            input#Rating.formcontrol(type='number' class="form-control" value=values.Rating name="Rating")
+
+          div.input
+            label Hours Spent
+            input#HoursSpent(type='number' name="Hours_Spent" value=values.Hours_Spent class="form-control")
+
+          div.input
+            label Image
+            input#Image(type='file', name="Image")
+
+          div.input
+            label Description
+            textarea#Rating(rows="5" cols="50" name="Description" class="form-control", value=values.Description)
+
+          div.actions
+            input(type="submit", value="Submit").submitbtn
+            a.submitbtn(href=homeURL) Cancel
+
+    //Google analytics stuff
+    script.
+      (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+      (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+      m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+      })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+      ga('create', 'UA-87345316-1', 'auto');
+      ga('send', 'pageview');
+      ga('send','event','button','submitAdventure');
