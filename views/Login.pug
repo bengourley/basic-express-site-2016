@@ -1,0 +1,31 @@
+html
+  head
+    //where to get more css formatting
+    link(rel='stylesheet', href='/stylesheets/layout.css')
+    link(rel='stylesheet', href='//netdna.bootstrapcdn.com/bootstrap/3.0.2/css/bootstrap.min.css')
+    link(rel='stylesheet', href='stylesheets/style.css')
+    //can rename title to something else later
+    title #{title} - Spots
+
+    body
+    .header
+      h1.page-title Spots
+
+
+block content
+  .main.container
+    .row
+      .col-md-6.col-md-offset-3
+        h1.display-2.m-b-2(style="text-align:center") Begin your adventure
+        form(name="add-estimation", method="post")
+            div.input
+                label Username
+                input(label="WOW", type="text", name="username", class='form-control').logintext
+            div.input
+                label Password
+                input(type="password",name="password", class='form-control').logintext
+            div(style="text-align:center;")
+              div.action
+                input(type="submit", value="Log in").submitbtn
+              div(style="margin-top:3px; position:relative;left:-8px;") Don't have an account?
+                  <a href="/Register" style="margin-left:4px;">Sign up!</a>
