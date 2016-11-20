@@ -1,0 +1,36 @@
+extend layout
+
+block prepend links
+      - var homeURL = '/Home/' + user.id;
+      - var adURL = '/AdventureAnalytics/' + user.id;
+      - var travelURL = '/TravelLog/' + user.id;
+
+block content
+  .main.container
+    .row
+      .col-md-6.col-md-offset-3
+        h1.display-2.m-b-2(style="text-align:center")
+        -var imagepath = '/images/'+adventureContent.image;
+        div
+          img(src=""+imagepath,
+          style="width:600px; height: 200px;",
+          alt="")
+
+        h1 #{adventureName}
+
+        div.content
+          p First Visit: #{adventureContent.Date_Visited}
+
+        div.content
+          p Times Visited: #{adventureContent.Times_Visited}
+
+        div.content
+          p Rating: #{adventureContent.Rating}
+
+        div.content
+          p Hours Spent: #{adventureContent.Hours_Spent}
+
+        div.content
+          p Description: #{adventureContent.Description}
+        -var location = "/LoggedAdventure/" + user.id + "/" + adventureContent.lat + "/" + adventureContent.lng + "/edit";
+        <a href=#{location} style="margin-left:4px;">Edit</a>

@@ -1,0 +1,9 @@
+extend layout
+
+block prepend links
+      - var homeURL = '/Home/' + user.id;
+      - var adURL = '/AdventureAnalytics/' + user.id;
+      - var travelURL = '/TravelLog/' + user.id;
+
+block append content
+      include includes/analyticstabs
