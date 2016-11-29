@@ -1,0 +1,100 @@
+{
+    "markers": [
+        {
+            "name": "Finsburry",
+            "lat": 51.52617,
+            "lng": -0.10866
+        },
+        {
+            "name": "Shoreditch",
+            "lat": 51.52639,
+            "lng": -0.08017
+        },
+        {
+            "name": "Whitechapel",
+            "lat": 51.51848,
+            "lng": -0.06317
+        }
+    ],
+    "title": "TravelLog",
+    "users": [
+        {
+            "id": "admin",
+            "pwd": "123",
+            "adventures": [
+                {
+                    "name": "Potato Chip",
+                    "Date_Visited": "0002-02-02",
+                    "Times_Visited": "",
+                    "Rating": "10",
+                    "Hours_Spent": "",
+                    "Description": "",
+                    "image": "potatochip.jpg",
+                    "lat": "51.50361379162682",
+                    "lng": "-0.11278152465820314"
+                },
+                {
+                    "name": "Potato Chip",
+                    "Date_Visited": "0002-02-02",
+                    "Times_Visited": "",
+                    "Rating": "10",
+                    "Hours_Spent": "",
+                    "Description": "",
+                    "image": "potatochip.jpg",
+                    "lat": "51.50361379162682",
+                    "lng": "-0.11278152465820314"
+                },
+                {
+                    "name": "beach",
+                    "Date_Visited": "2016-01-02",
+                    "Times_Visited": "2",
+                    "Rating": "5",
+                    "Hours_Spent": "3",
+                    "Description": "",
+                    "image": "beach.jpeg",
+                    "lat": "51.51730898361811",
+                    "lng": "-0.1123523712158203"
+                },
+                {
+                    "name": "geisel",
+                    "Date_Visited": "2016-03-05",
+                    "Times_Visited": "5",
+                    "Rating": "9",
+                    "Hours_Spent": "10",
+                    "Description": "",
+                    "image": "geisel.jpg",
+                    "lat": "51.528950998551906",
+                    "lng": "-0.1041126251220703"
+                },
+                {
+                    "name": "Sigma Kappa Rox",
+                    "Date_Visited": "",
+                    "Times_Visited": "",
+                    "Rating": "",
+                    "Hours_Spent": "",
+                    "Description": " ",
+                    "image": "14650445_10154610730858669_418477091311425272_n.jpg",
+                    "lat": "51.51472517425703",
+                    "lng": "-0.089263916015625"
+                }
+            ]
+        },
+        {
+            "id": "ogilad",
+            "pwd": "abc123",
+            "adventures": []
+        },
+        {
+            "id": "ogilad2",
+            "pwd": "tester",
+            "adventures": []
+        },
+        {
+            "id": "bobody2",
+            "pwd": "creed",
+            "adventures": []
+        }
+    ],
+    "_locals": {},
+    "showGrid": false
+}

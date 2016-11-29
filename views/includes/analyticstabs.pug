@@ -1,0 +1,57 @@
+
+block body(data-spy="scroll" data-target=".navbar" data-offset="50")
+
+     #{message}
+     nav(class="navbar navbar-inverse")
+      ul(class="nav navbar-nav")
+       li
+         a(href="#adventurability") Adventurability
+       li
+         a(href="#favorites") Favorites
+       li
+         a(href="#pastWeek") Past Week
+
+     div(id="adventurability")
+       h1.analyticsHeaders Adventure Frequency
+     hr
+
+     div(id="analyticsGraph").graphBlue
+           block tester
+               include graph
+
+     hr
+     div(style = "margin-left:2%")
+       h1.analyticsHeaders Favorites
+     hr
+     div(id="favorites")
+           h3.headThree Top Rated Place(s):
+             br
+             h5(style="margin-left:2%") #{highestRatedAd.join(', ')}
+           h3.headThree Most Visited Place(s):
+             br
+             h5(style="margin-left:2%") #{mostVisited.join(', ')}
+           h3.headThree Most Time Spent at:
+             br
+             h5(style="margin-left:2%") #{mostHours.join(', ')}
+
+
+     hr
+     div(style = "margin-left:2%")
+       h1.analyticsHeaders Past Week
+     hr
+     div(id="pastWeek")
+           h3.headThree In the past, you've gone on these adventures:
+              br
+              each ad in weekly
+                  - var link = "/adventure/" + user.id + "/" + ad.name
+                  a(href=link)
+                    h5(style="margin-left:2%") #{ad.name} : #{ad.Description}
+           h3.headThree In total, that's #{weekly.length} adventures this week!
+           h3.headThree The total amount of time you've spent at these adventures is:
+              br
+              h5(style="margin-left:2%") #{weekAnalytics.adventureTime} Hours!
+
+           h3.headThree The total amount of times you've visited these places is:
+              br
+              h5(style="margin-left:2%") #{weekAnalytics.totalVisits} Visits!
+           hr

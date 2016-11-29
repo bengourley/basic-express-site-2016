@@ -1,0 +1,22 @@
+doctype html
+html
+  head
+    //where to get more css formatting
+    link(rel='stylesheet', href='/stylesheets/layout.css')
+    link(rel="stylesheet",href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css")
+
+    //can rename title to something else later
+    title #{title} - Spots
+    block googleAnalytics
+  body
+    .header
+      h1.page-title Spots
+
+    //links on a menu bar!
+    block links
+      ul.nav1
+        li: a(href=homeURL) Map
+        li: a(href=adURL) Adventure Analytics
+        li: a(href=travelURL) Travel Log
+
+    block content
